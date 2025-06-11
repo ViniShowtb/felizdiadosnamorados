@@ -1,167 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine? 💝</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine? 💝</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
-    <style>
-        /* Mobile-friendly CSS */
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff0f5;
-            text-align: center;
-            overflow-x: hidden;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000; /* fundo preto */
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-        .container {
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 16px 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        h1, h2 {
-            font-family: 'Dancing Script', cursive;
-            color: #e91e63;
-            margin: 12px 0;
-            font-size: 1.8em;
-        }
+    h1, h2 {
+      font-family: 'Dancing Script', cursive;
+      color: #ff69b4;
+      margin: 12px 0;
+      font-size: 1.8em;
+    }
 
-        .cute-btn {
-            background-color: #ff69b4;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            margin: 8px 6px;
-            border-radius: 24px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s;
-            max-width: 90%;
-        }
+    .cute-btn {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 8px 6px;
+      border-radius: 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      max-width: 90%;
+    }
 
-        .cute-btn:active {
-            transform: scale(0.95);
-        }
+    .cute-btn:active {
+      transform: scale(0.95);
+    }
 
-        .special {
-            background-color: #ff1493;
-        }
+    .special {
+      background-color: #ff1493;
+    }
 
-        .music-controls {
-            margin-bottom: 16px;
-        }
+    .music-controls {
+      margin-bottom: 16px;
+    }
 
-        .question-section {
-            margin-top: 16px;
-        }
+    .question-section {
+      margin-top: 16px;
+    }
 
-        .love-meter {
-            margin: 16px 0;
-            width: 100%;
-        }
+    .love-meter {
+      margin: 16px 0;
+      width: 100%;
+    }
 
-        .slider {
-            width: 100%;
-        }
+    .slider {
+      width: 100%;
+    }
 
-        .love-value-container {
-            font-size: 1rem;
-        }
+    .love-value-container {
+      font-size: 1rem;
+    }
 
-        .hidden {
-            display: none;
-        }
+    .hidden {
+      display: none;
+    }
 
-        .celebration {
-            margin-top: 32px;
-        }
+    .celebration {
+      margin-top: 32px;
+    }
 
-        .celebration-text {
-            margin: 12px 0;
-            font-size: 1.2em;
-        }
+    .celebration-text {
+      margin: 12px 0;
+      font-size: 1.2em;
+    }
 
-        @media (max-width: 360px) {
-            h1, h2 {
-                font-size: 1.5em;
-            }
+    @media (max-width: 360px) {
+      h1, h2 {
+        font-size: 1.5em;
+      }
 
-            .cute-btn {
-                padding: 10px 16px;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+      .cute-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="floating-elements">
-        <!-- Hearts and bears will be added here by JavaScript -->
+  <div class="floating-elements">
+    <!-- Emojis flutuantes (se quiser, pode ativar no script) -->
+  </div>
+
+  <div class="container">
+    <h1 id="valentineTitle"></h1>
+
+    <!-- Controles de música -->
+    <div id="musicControls" class="music-controls">
+      <button id="musicToggle" class="cute-btn">🎵 Ligar música</button>
+      <audio id="bgMusic" loop>
+        <source id="musicSource" type="audio/mpeg">
+        Seu navegador não suporta áudio :(
+      </audio>
     </div>
 
-    <div class="container">
-        <h1 id="valentineTitle"></h1>
-
-        <div id="musicControls" class="music-controls">
-            <button id="musicToggle" class="cute-btn">🎵 Play Music</button>
-            <audio id="bgMusic" loop>
-                <source id="musicSource" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <!-- First Question -->
-        <div class="question-section" id="question1">
-            <h2 id="question1Text"></h2>
-            <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
-            <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
-            <div class="secret-answer">
-                <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
-            </div>
-        </div>
-
-        <!-- Second Question -->
-        <div class="question-section hidden" id="question2">
-            <h2 id="question2Text"></h2>
-            <div class="love-meter">
-                <input type="range" min="0" max="10000" value="100" class="slider" id="loveMeter">
-                <p>
-                    <span class="love-value-container">
-                        <span id="startText"></span> (<span id="loveValue">100</span>%)
-                    </span>
-                    <span id="extraLove" class="hidden"></span>
-                </p>
-            </div>
-            <button class="cute-btn" onclick="showNextQuestion(3)" id="nextBtn"></button>
-        </div>
-
-        <!-- Final Question -->
-        <div class="question-section hidden" id="question3">
-            <h2 id="question3Text"></h2>
-            <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
-            <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
-        </div>
-
-        <!-- Celebration -->
-        <div class="celebration hidden" id="celebration">
-            <h2 id="celebrationTitle"></h2>
-            <p class="celebration-text" id="celebrationMessage"></p>
-            <p class="celebration-text" id="celebrationEmojis"></p>
-        </div>
+    <!-- Primeira pergunta -->
+    <div class="question-section" id="question1">
+      <h2 id="question1Text"></h2>
+      <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
+      <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
+      <div class="secret-answer">
+        <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
+      </div>
     </div>
 
-    <script src="config.js"></script>
-    <script src="theme.js"></script>
-    <script src="script.js"></script>
+    <!-- Segunda pergunta -->
+    <div class="question-section hidden" id="question2">
+      <h2 id="question2Text"></h2>
+      <div class="love-meter">
+        <input type="range" min="0" max="10000" value="100" class="slider" id="loveMeter" />
+        <p>
+          <span class="love-value-container">
+            <span id="startText"></span> (<span id="loveValue">100</span>%)
+          </span>
+          <span id="extraLove" class="hidden"></span>
+        </p>
+      </div>
+      <button class="cute-btn" onclick="showNextQuestion(3)" id="nextBtn"></button>
+    </div>
+
+    <!-- Terceira pergunta -->
+    <div class="question-section hidden" id="question3">
+      <h2 id="question3Text"></h2>
+      <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
+      <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
+    </div>
+
+    <!-- Celebração -->
+    <div class="celebration hidden" id="celebration">
+      <h2 id="celebrationTitle"></h2>
+      <p class="celebration-text" id="celebrationMessage"></p>
+      <!-- Emojis removidos como solicitado -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="theme.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // Script para controlar a música
+    document.addEventListener("DOMContentLoaded", () => {
+      const music = document.getElementById("bgMusic");
+      const musicSource = document.getElementById("musicSource");
+      const musicToggle = document.getElementById("musicToggle");
+
+      // Carrega a URL da música do config.js
+      const configMusic = window.VALENTINE_CONFIG?.music;
+      if (configMusic?.enabled && configMusic.musicUrl) {
+        musicSource.src = configMusic.musicUrl;
+        music.load();
+        music.volume = configMusic.volume ?? 1.0;
+
+        if (configMusic.autoplay) {
+          music.play().catch(() => {
+            console.warn("Autoplay bloqueado pelo navegador.");
+          });
+        }
+
+        musicToggle.innerText = configMusic.startText || "🎵 Ligar música";
+
+        let isPlaying = false;
+
+        musicToggle.addEventListener("click", () => {
+          if (isPlaying) {
+            music.pause();
+            musicToggle.innerText = configMusic.startText || "🎵 Ligar música";
+          } else {
+            music.play();
+            musicToggle.innerText = configMusic.stopText || "🔇 Parar música";
+          }
+          isPlaying = !isPlaying;
+        });
+      } else {
+        document.getElementById("musicControls").classList.add("hidden");
+      }
+    });
+  </script>
 </body>
 </html>
