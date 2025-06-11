@@ -2,6 +2,14 @@
 // 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
 // ============================================
 
+body {
+    background-image: url('URL_DA_IMAGEM.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* ou use um overlay com cor pastel */
+}
+
+
 const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
