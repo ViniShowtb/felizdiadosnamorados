@@ -9,15 +9,10 @@ const CONFIG = {
     // The title that appears in the browser tab
     pageTitle: " Te amo pra hoje e sempre! 💝",
 
-    // Floating emojis that appear in the background
-    floatingEmojis: {
-        hearts: ['❤️', '💖', '💝'],  // Heart emojis
-    },
-
     // Questions and answers
     questions: {
         first: {
-            text: "Você me ama?",
+            text: "Eu te amo muito, você me ama?",
             yesBtn: "Sim",
             noBtn: "Não",
             secretAnswer: "Ti amo muitu! ❤️"
