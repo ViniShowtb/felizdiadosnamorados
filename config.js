@@ -78,7 +78,7 @@ const CONFIG = {
     // ✅ IMAGEM PERSONALIZADA
     image: {
         enabled: true,
-        imageUrl: "https://i.postimg.cc/h4ZWpdn2/My-boo.webp",  // Troque por sua URL real
+        imageUrl: "https://i.postimg.cc/fT24TsdL/My-boo.png",  // Troque por sua URL real
         altText: "Foto nossa ❤️",
         style: {
             width: "300px",
