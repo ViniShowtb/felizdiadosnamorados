@@ -1,208 +1,185 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Will You Be My Valentine? 💝</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Te amo pra hoje e sempre! 💝</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000; /* fundo preto */
-      color: #fff;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #ffafbd, #ffc3a0);
+      color: #ff4757;
       text-align: center;
-      overflow-x: hidden;
+      padding: 20px;
     }
-
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 16px 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1, h2 {
-      font-family: 'Dancing Script', cursive;
-      color: #ff69b4;
-      margin: 12px 0;
-      font-size: 1.8em;
-    }
-
-    .cute-btn {
-      background-color: #ff69b4;
+    button {
+      background-color: #ff6b6b;
       color: white;
       border: none;
-      padding: 12px 20px;
-      margin: 8px 6px;
-      border-radius: 24px;
-      font-size: 1rem;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.2s;
-      max-width: 90%;
+      transition: background 0.3s ease;
     }
-
-    .cute-btn:active {
-      transform: scale(0.95);
-    }
-
-    .special {
-      background-color: #ff1493;
-    }
-
-    .music-controls {
-      margin-bottom: 16px;
-    }
-
-    .question-section {
-      margin-top: 16px;
-    }
-
-    .love-meter {
-      margin: 16px 0;
-      width: 100%;
-    }
-
-    .slider {
-      width: 100%;
-    }
-
-    .love-value-container {
-      font-size: 1rem;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .celebration {
-      margin-top: 32px;
-    }
-
-    .celebration-text {
-      margin: 12px 0;
-      font-size: 1.2em;
-    }
-
-    @media (max-width: 360px) {
-      h1, h2 {
-        font-size: 1.5em;
-      }
-
-      .cute-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-      }
+    button:hover {
+      background-color: #ff8787;
     }
   </style>
 </head>
 <body>
-  <div class="floating-elements">
-    <!-- Emojis flutuantes (se quiser, pode ativar no script) -->
-  </div>
 
-  <div class="container">
-    <h1 id="valentineTitle"></h1>
+  <h1>💖 Kevelin 💖</h1>
+  <p>Eu te amo muito, você me ama?</p>
+  <button id="yesBtn">Sim</button>
+  <button id="noBtn">Não</button>
+  <div id="result"></div>
 
-    <!-- Controles de música -->
-    <div id="musicControls" class="music-controls">
-      <button id="musicToggle" class="cute-btn">🎵 Ligar música</button>
-      <audio id="bgMusic" loop>
-        <source id="musicSource" type="audio/mpeg">
-        Seu navegador não suporta áudio :(
-      </audio>
-    </div>
+  <!-- Imagem será inserida por JS -->
+  <!-- Contador de dias será inserido por JS -->
 
-    <!-- Primeira pergunta -->
-    <div class="question-section" id="question1">
-      <h2 id="question1Text"></h2>
-      <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
-      <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
-      <div class="secret-answer">
-        <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
-      </div>
-    </div>
-
-    <!-- Segunda pergunta -->
-    <div class="question-section hidden" id="question2">
-      <h2 id="question2Text"></h2>
-      <div class="love-meter">
-        <input type="range" min="0" max="10000" value="100" class="slider" id="loveMeter" />
-        <p>
-          <span class="love-value-container">
-            <span id="startText"></span> (<span id="loveValue">100</span>%)
-          </span>
-          <span id="extraLove" class="hidden"></span>
-        </p>
-      </div>
-      <button class="cute-btn" onclick="showNextQuestion(3)" id="nextBtn"></button>
-    </div>
-
-    <!-- Terceira pergunta -->
-    <div class="question-section hidden" id="question3">
-      <h2 id="question3Text"></h2>
-      <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
-      <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
-    </div>
-
-    <!-- Celebração -->
-    <div class="celebration hidden" id="celebration">
-      <h2 id="celebrationTitle"></h2>
-      <p class="celebration-text" id="celebrationMessage"></p>
-      <!-- Emojis removidos como solicitado -->
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="config.js"></script>
-  <script src="theme.js"></script>
-  <script src="script.js"></script>
+  <audio id="bgMusic" src="https://res.cloudinary.com/dg7nzyh4b/video/upload/v1749645032/Ac%C3%BAstico_Delacruz___Me_Leva_VQ2NPHdTb-0_mduo9c.mp3" autoplay loop></audio>
 
   <script>
-    // Script para controlar a música
-    document.addEventListener("DOMContentLoaded", () => {
-      const music = document.getElementById("bgMusic");
-      const musicSource = document.getElementById("musicSource");
-      const musicToggle = document.getElementById("musicToggle");
-
-      // Carrega a URL da música do config.js
-      const configMusic = window.VALENTINE_CONFIG?.music;
-      if (configMusic?.enabled && configMusic.musicUrl) {
-        musicSource.src = configMusic.musicUrl;
-        music.load();
-        music.volume = configMusic.volume ?? 1.0;
-
-        if (configMusic.autoplay) {
-          music.play().catch(() => {
-            console.warn("Autoplay bloqueado pelo navegador.");
-          });
+    // 💝 CONFIGURAÇÕES PERSONALIZADAS
+    const CONFIG = {
+      valentineName: "Kevelin",
+      pageTitle: "Te amo pra hoje e sempre! 💝",
+      questions: {
+        first: {
+          text: "Eu te amo muito, você me ama?",
+          yesBtn: "Sim",
+          noBtn: "Não",
+          secretAnswer: "Ti amo muitu! ❤️"
         }
-
-        musicToggle.innerText = configMusic.startText || "🎵 Ligar música";
-
-        let isPlaying = false;
-
-        musicToggle.addEventListener("click", () => {
-          if (isPlaying) {
-            music.pause();
-            musicToggle.innerText = configMusic.startText || "🎵 Ligar música";
-          } else {
-            music.play();
-            musicToggle.innerText = configMusic.stopText || "🔇 Parar música";
-          }
-          isPlaying = !isPlaying;
-        });
-      } else {
-        document.getElementById("musicControls").classList.add("hidden");
+      },
+      loveMessages: {
+        extreme: "Me ama demais ein, mas te amo mais! 🥰🚀💝"
+      },
+      celebration: {
+        title: "Eu sou a pessoa mais sortuda do mundo por ter você! 💝💓",
+        message: "Nada vale mais que você e a Lalá em minha vida! ❤️",
+        emojis: "🎁💖🤗💝💋❤️💕"
+      },
+      colors: {
+        backgroundStart: "#ffafbd",
+        backgroundEnd: "#ffc3a0",
+        buttonBackground: "#ff6b6b",
+        buttonHover: "#ff8787",
+        textColor: "#ff4757"
+      },
+      image: {
+        enabled: true,
+        imageUrl: "https://i.postimg.cc/fT24TsdL/My-boo.png",
+        altText: "Foto nossa ❤️",
+        style: {
+          width: "300px",
+          borderRadius: "15px",
+          margin: "20px auto",
+          display: "block",
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)"
+        }
+      },
+      music: {
+        enabled: true,
+        autoplay: true,
+        musicUrl: "https://res.cloudinary.com/dg7nzyh4b/video/upload/v1749645032/Ac%C3%BAstico_Delacruz___Me_Leva_VQ2NPHdTb-0_mduo9c.mp3",
+        startText: "🎵 Ligar música",
+        stopText: "🔇 Parar música",
+        volume: 1.0
+      },
+      sinceDate: {
+        enabled: true,
+        startDate: "2024-12-24T00:00:00",
+        title: "⏳ Desde o dia que mudou minha vida...",
+        prefix: "Estamos juntos há: ",
+        style: {
+          fontSize: "20px",
+          color: "#ff4757",
+          textAlign: "center",
+          marginTop: "20px"
+        }
       }
+    };
+
+    window.VALENTINE_CONFIG = CONFIG;
+
+    // ✅ MOSTRA IMAGEM
+    (function showValentineImage() {
+      const cfg = CONFIG;
+      if (cfg.image && cfg.image.enabled && cfg.image.imageUrl) {
+        const img = document.createElement("img");
+        img.src = cfg.image.imageUrl;
+        img.alt = cfg.image.altText || "Imagem especial";
+        const style = cfg.image.style || {};
+        for (let key in style) {
+          img.style[key] = style[key];
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+          document.body.appendChild(img);
+        });
+      }
+    })();
+
+    // ✅ CONTADOR DESDE QUE SE CONHECERAM
+    (function showSinceDateCounter() {
+      const cfg = CONFIG;
+      if (!cfg.sinceDate || !cfg.sinceDate.enabled) return;
+
+      function formatTime(delta) {
+        const days = Math.floor(delta / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((delta / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((delta / (1000 * 60)) % 60);
+        const seconds = Math.floor((delta / 1000) % 60);
+        return `${days} dias, ${hours}h, ${minutes}min, ${seconds}s`;
+      }
+
+      const container = document.createElement("div");
+      container.style = Object.entries(cfg.sinceDate.style || {})
+        .map(([key, value]) => `${key}: ${value}`)
+        .join(";");
+
+      const title = document.createElement("h3");
+      title.textContent = cfg.sinceDate.title;
+      container.appendChild(title);
+
+      const timerText = document.createElement("p");
+      timerText.textContent = cfg.sinceDate.prefix;
+      container.appendChild(timerText);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.appendChild(container);
+        const start = new Date(cfg.sinceDate.startDate);
+        setInterval(() => {
+          const now = new Date();
+          const delta = now - start;
+          timerText.textContent = `${cfg.sinceDate.prefix} ${formatTime(delta)}`;
+        }, 1000);
+      });
+    })();
+
+    // ✅ BOTÕES DE AMOR
+    document.addEventListener("DOMContentLoaded", () => {
+      const yesBtn = document.getElementById("yesBtn");
+      const noBtn = document.getElementById("noBtn");
+      const result = document.getElementById("result");
+
+      yesBtn.textContent = CONFIG.questions.first.yesBtn;
+      noBtn.textContent = CONFIG.questions.first.noBtn;
+
+      yesBtn.addEventListener("click", () => {
+        result.innerHTML = `
+          <h2>${CONFIG.celebration.title}</h2>
+          <p>${CONFIG.celebration.message}</p>
+          <p style="font-size: 24px;">${CONFIG.celebration.emojis}</p>
+        `;
+      });
+
+      noBtn.addEventListener("click", () => {
+        result.textContent = CONFIG.questions.first.secretAnswer;
+      });
     });
   </script>
 </body>
