@@ -1,100 +1,115 @@
 // ============================================
-// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
+// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE AQUI 💝
 // ============================================
-
-image: {
-    enabled: true,
-    imageUrl: "https://exemplo.com/sua-imagem.jpg",  // Coloque o link direto da imagem aqui
-    altText: "Foto nossa ❤️",                         // Texto alternativo (acessibilidade)
-    style: {
-        width: "300px",
-        borderRadius: "15px",
-        margin: "20px auto",
-        display: "block",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)"
-    }
-}
 
 const CONFIG = {
     // Your Valentine's name that will appear in the title
-    // Example: "Jade", "Sarah", "Mike"
     valentineName: "Kevelin",
 
     // The title that appears in the browser tab
-    // You can use emojis! 💝 💖 💗 💓 💞 💕
     pageTitle: " Te amo pra hoje e sempre! 💝",
 
     // Floating emojis that appear in the background
-    // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
         hearts: ['❤️', '💖', '💝'],  // Heart emojis
+    },
 
     // Questions and answers
-    // Customize each question and its possible responses
     questions: {
         first: {
-            text: "Você me ama?",                                    // First interaction
-            yesBtn: "Sim",                                             // Text for "Yes" button
-            noBtn: "Não",                                               // Text for "No" button
-            secretAnswer: "Ti amo muitu! ❤️"           // Secret hover message
+            text: "Você me ama?",
+            yesBtn: "Sim",
+            noBtn: "Não",
+            secretAnswer: "Ti amo muitu! ❤️"
         },
         second: {
-            text: "Quanto você me ama?",                          // For the love meter
-            startText: "Tanto assim!",                                   // Text before the percentage
-            nextBtn: "Próximo! ❤️"                                         // Text for the next button
+            text: "Quanto você me ama?",
+            startText: "Tanto assim!",
+            nextBtn: "Próximo! ❤️"
         },
         third: {
-            text: "Nunca vai me largar? 🌹", // The big question!
-            yesBtn: "Nunca!",                                             // Text for "Yes" button
-            noBtn: "Talvez largue ein!"                                                 // Text for "No" button
+            text: "Nunca vai me largar? 🌹",
+            yesBtn: "Nunca!",
+            noBtn: "Talvez largue ein!"
         }
     },
 
     // Love meter messages
-    // They show up depending on how far they slide the meter
     loveMessages: {
-        extreme: "Me ama demais ein, mas te amo mais! 🥰🚀💝",  // Shows when they go past 5000%
-        high: "Slc, me ama demais! 🚀💝",              // Shows when they go past 1000%
-        normal: " Te amo muito mais que isso! 🥰"                           // Shows when they go past 100%
+        extreme: "Me ama demais ein, mas te amo mais! 🥰🚀💝",
+        high: "Slc, me ama demais! 🚀💝",
+        normal: " Te amo muito mais que isso! 🥰"
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "Eu sou a pessoa mais sortuda do mundo por ter você! 💝💓",
         message: "Nada vale mais que você e a Lalá em minha vida! ❤️",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        emojis: "🎁💖🤗💝💋❤️💕"
     },
 
     // Color scheme for the website
-    // Use https://colorhunt.co or https://coolors.co to find beautiful color combinations
     colors: {
-        backgroundStart: "#ffafbd",      // Gradient start (try pastel colors for a soft look)
-        backgroundEnd: "#ffc3a0",        // Gradient end (should complement backgroundStart)
-        buttonBackground: "#ff6b6b",     // Button color (should stand out against the background)
-        buttonHover: "#ff8787",          // Button hover color (slightly lighter than buttonBackground)
-        textColor: "#ff4757"             // Text color (make sure it's readable!)
+        backgroundStart: "#ffafbd",
+        backgroundEnd: "#ffc3a0",
+        buttonBackground: "#ff6b6b",
+        buttonHover: "#ff8787",
+        textColor: "#ff4757"
     },
 
     // Animation settings
-    // Adjust these if you want faster/slower animations
     animations: {
-        floatDuration: "15s",           // How long it takes hearts to float up (10-20s recommended)
-        floatDistance: "50px",          // How far hearts move sideways (30-70px recommended)
-        bounceSpeed: "0.5s",            // Speed of bouncing animations (0.3-0.7s recommended)
-        heartExplosionSize: 1.5         // Size of heart explosion effect (1.2-2.0 recommended)
+        floatDuration: "15s",
+        floatDistance: "50px",
+        bounceSpeed: "0.5s",
+        heartExplosionSize: 1.5
     },
 
     // Background Music (Optional)
-    // Add your own music URL after getting proper licenses
     music: {
-        enabled: true,                     // Music feature is enabled
-        autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://res.cloudinary.com/dg7nzyh4b/video/upload/v1749645032/Ac%C3%BAstico_Delacruz___Me_Leva_VQ2NPHdTb-0_mduo9c.mp3", // Music streaming URL
-        startText: "🎵 Ligar música",        // Button text to start music
-        stopText: "🔇 Parar música",         // Button text to stop music
-        volume: 1.0                        // Volume level (0.0 to 1.0)
+        enabled: true,
+        autoplay: true,
+        musicUrl: "https://res.cloudinary.com/dg7nzyh4b/video/upload/v1749645032/Ac%C3%BAstico_Delacruz___Me_Leva_VQ2NPHdTb-0_mduo9c.mp3",
+        startText: "🎵 Ligar música",
+        stopText: "🔇 Parar música",
+        volume: 1.0
+    },
+
+    // ✅ IMAGEM PERSONALIZADA
+    image: {
+        enabled: true,
+        imageUrl: "https://exemplo.com/sua-imagem.jpg",  // Troque por sua URL real
+        altText: "Foto nossa ❤️",
+        style: {
+            width: "300px",
+            borderRadius: "15px",
+            margin: "20px auto",
+            display: "block",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)"
+        }
     }
 };
 
-// Don't modify anything below this line unless you know what you're doing
-window.VALENTINE_CONFIG = CONFIG; 
+// Não altere abaixo desta linha a menos que saiba o que está fazendo
+window.VALENTINE_CONFIG = CONFIG;
+
+// ✅ Script para exibir a imagem automaticamente
+(function showValentineImage() {
+    const cfg = window.VALENTINE_CONFIG;
+    if (cfg.image && cfg.image.enabled && cfg.image.imageUrl) {
+        const img = document.createElement("img");
+        img.src = cfg.image.imageUrl;
+        img.alt = cfg.image.altText || "Imagem especial";
+
+        // Aplica estilos definidos no config
+        const style = cfg.image.style || {};
+        for (let key in style) {
+            img.style[key] = style[key];
+        }
+
+        // Adiciona ao body (ou você pode trocar por uma div específica)
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.appendChild(img);
+        });
+    }
+})();
