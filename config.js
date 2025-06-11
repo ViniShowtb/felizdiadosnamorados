@@ -2,13 +2,20 @@
 // 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
 // ============================================
 
-body {
-    background-image: url('URL_DA_IMAGEM.jpg');
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.postimg.cc/h4ZWpdn2/My-boo.webp'); /* Substitua pelo link da sua imagem */
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.1; /* ou use um overlay com cor pastel */
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1; /* Coloca atrás de tudo */
 }
-
 
 const CONFIG = {
     // Your Valentine's name that will appear in the title
