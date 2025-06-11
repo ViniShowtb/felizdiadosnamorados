@@ -14,9 +14,7 @@ const CONFIG = {
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
-    },
+        hearts: ['❤️', '💖', '💝'],  // Heart emojis
 
     // Questions and answers
     // Customize each question and its possible responses
@@ -50,7 +48,7 @@ const CONFIG = {
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "Eu sou a pessoa mais sortuda do mundo por ter você! 💝💓",
-        message: "Agradeço tanta a Deus por ter você e a Lalá em minha vida, nada vale mais que vocês em minha vida! ❤️",
+        message: "Nada vale mais que você e a Lalá em minha vida! ❤️",
         emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
     },
 
