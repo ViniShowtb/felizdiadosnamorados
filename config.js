@@ -2,6 +2,19 @@
 // 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
 // ============================================
 
+image: {
+    enabled: true,
+    imageUrl: "https://exemplo.com/sua-imagem.jpg",  // Coloque o link direto da imagem aqui
+    altText: "Foto nossa ❤️",                         // Texto alternativo (acessibilidade)
+    style: {
+        width: "300px",
+        borderRadius: "15px",
+        margin: "20px auto",
+        display: "block",
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)"
+    }
+}
+
 const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
