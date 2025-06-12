@@ -1,11 +1,18 @@
-// Funções principais do site
-function calcularDias() {
+function atualizarContador() {
   const inicio = new Date(dataInicio);
-  const hoje = new Date();
-  const diferenca = hoje - inicio;
-  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-  document.getElementById("dias").textContent = dias;
-  document.getElementById("data-inicio").textContent = new Date(dataInicio).toLocaleDateString('pt-BR');
+  const agora = new Date();
+  const diff = agora - inicio;
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diff / (1000 * 60)) % 60);
+  const segundos = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("dias").textContent =
+    `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+
+  document.getElementById("data-inicio").textContent =
+    inicio.toLocaleDateString('pt-BR');
 }
 
 function toggleMusic() {
@@ -21,4 +28,7 @@ function mostrarMensagem() {
   document.getElementById("extraMsg").style.display = 'block';
 }
 
-document.addEventListener("DOMContentLoaded", calcularDias);
+document.addEventListener("DOMContentLoaded", () => {
+  atualizarContador();
+  setInterval(atualizarContador, 1000);
+});
