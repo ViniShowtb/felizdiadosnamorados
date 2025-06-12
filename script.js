@@ -6,7 +6,6 @@ function calcularDias() {
   const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
   document.getElementById("dias").textContent = dias;
   document.getElementById("data-inicio").textContent = new Date(dataInicio).toLocaleDateString('pt-BR');
-  document.getElementById("musica-src").src = musicaUrl;
 }
 
 function toggleMusic() {
